@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class Main {
+public class Sem01 {
 
     static int i = 1; //32bit
     static long l = 6; //64bit
