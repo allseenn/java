@@ -2,9 +2,9 @@ import java.util.Scanner;
 public class Task02 {
     public static void main(String[] args) {
         //1. Напишите программу, чтобы найти вхождение в строке (содержащей все символы другой строки).
-        System.out.printf("Enter first line: ");
+        System.out.printf("Введите строку цифр: ");
         String firstString = new Scanner(System.in).nextLine();
-        System.out.printf("Enter second line: ");
+        System.out.printf("Еще строку цифр: ");
         String secondString = new Scanner(System.in).nextLine();
         System.out.println("1. " + firstString.contains(secondString));
         // 2. Напишите программу, чтобы проверить, являются ли две данные строки вращением друг друга (вхождение в обратном порядке).
@@ -14,12 +14,13 @@ public class Task02 {
         System.out.println("  reverse secondString: "+ reverse(secondString));
         // 4. Дано два числа, например 3 и 56, необходимо составить следующие строки:
         //  3 + 56 = 59 3 – 56 = -53 3 * 56 = 168 Используем метод StringBuilder.append().
-        String string41 = new StringBuilder(firstString).append(" + ").append(secondString).append(" = ").append(Integer.parseInt(firstString ) + Integer.parseInt(secondString)).toString();
+        String string41 = new StringBuilder(firstString).append(" + ").append(secondString).append(" = ").append(Integer.parseInt(firstString) + Integer.parseInt(secondString)).toString();
         System.out.println("4. " + string41);
-        String string42 = new StringBuilder(firstString).append(" - ").append(secondString).append(" = ").append(Integer.parseInt(firstString ) - Integer.parseInt(secondString)).toString();
+        String string42 = new StringBuilder(firstString).append(" - ").append(secondString).append(" = ").append(Integer.parseInt(firstString) - Integer.parseInt(secondString)).toString();
         System.out.println("   " + string42);
-        String string43 = new StringBuilder(firstString).append(" + ").append(secondString).append(" = ").append(Integer.parseInt(firstString ) * Integer.parseInt(secondString)).toString();
+        String string43 = new StringBuilder(firstString).append(" + ").append(secondString).append(" = ").append(Integer.parseInt(firstString) * Integer.parseInt(secondString)).toString();
         System.out.println("   " + string43);
+
         //5. Замените символ “=” на слово “равно”. Используйте методы
         // StringBuilder.insert(),StringBuilder.deleteCharAt().
         System.out.println("5. " + new StringBuilder(string41).deleteCharAt(string41.indexOf("=")).insert(string41.indexOf("="), "равно"));
