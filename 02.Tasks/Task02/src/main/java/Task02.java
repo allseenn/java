@@ -20,7 +20,6 @@ public class Task02 {
         System.out.println("   " + string42);
         String string43 = new StringBuilder(firstString).append(" + ").append(secondString).append(" = ").append(Integer.parseInt(firstString) * Integer.parseInt(secondString)).toString();
         System.out.println("   " + string43);
-
         //5. Замените символ “=” на слово “равно”. Используйте методы
         // StringBuilder.insert(),StringBuilder.deleteCharAt().
         System.out.println("5. " + new StringBuilder(string41).deleteCharAt(string41.indexOf("=")).insert(string41.indexOf("="), "равно"));
