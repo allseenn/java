@@ -14,6 +14,7 @@ public class Strings {
     char[] name = {'S', 'l', 'a', 'v', 'a'}; // Slava
     String[] surname = {"R", "o", "m", "a", "s", "h", "i", "n"};
     String.join("", surname); // Romashin
-    System.out.println(name);
+    str1.concat(str2); // Worldworld
+    System.out.println();
   }
 }
