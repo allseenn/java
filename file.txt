@@ -1,1 +1,0 @@
-This code will create a new file called "file.txt" in the current directory. If the file already exists, it will be overwritten. This is a problem because it could result in data loss. To fix this, we can use the File.exists() method to check if the file already exists, and if it does, we can use the File.renameTo() method to give the file a different name.
