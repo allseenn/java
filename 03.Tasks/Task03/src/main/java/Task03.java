@@ -1,6 +1,7 @@
+// Ромашин Ростислав группа 4992
 import java.util.*;
 import java.util.stream.IntStream;
-// Ромашин Ростислав группа 4992
+
 public class Task03 {
     public static void main(String[] args) {
         // 1. Реализовать алгоритм сортировки списков слиянием
