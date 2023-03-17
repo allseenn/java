@@ -7,13 +7,13 @@ public class Task04 {
         LinkedList<String> fname = new LinkedList<>();
         LinkedList<String> mname = new LinkedList<>();
         LinkedList<Integer> age = new LinkedList<>();
-        LinkedList<Integer> sex = new LinkedList<>();
+        LinkedList<Boolean> sex = new LinkedList<>();
         System.out.println("Образец заполнения через пробел: Фамилия Имя Отчество 38 муж");
         Scanner input = new Scanner(System.in);
         boolean quit = false;
         do
         {
-                System.out.printf("q(uit),  u(nsorted),   s(orted): ");
+                System.out.printf(" q(uit), p(rint), s(ort) or add: ");
                 String[] user = input.nextLine().split(" ");
                 if (user.length == 5) {
                 id.add(id.size());
@@ -21,48 +21,44 @@ public class Task04 {
                 fname.add(user[1]);
                 mname.add(user[2]);
                 age.add(Integer.valueOf(user[3]));
-                Integer gen = (user[4].equals("male") || user[4].equals("М") || user[4].equals("муж")
+                Boolean gen = (user[4].equals("male") || user[4].equals("М") || user[4].equals("муж")
                 || user[4].equals("Муж") || user[4].equals("M") || user[4].equals("M")
-                || user[4].equals("мужчина") || user[4].equals("Мужчина"))? 1: 0;
+                || user[4].equals("мужчина") || user[4].equals("Мужчина"))? true: false;
                 sex.add(gen);
 
                 }
                 else if (user[0].equals("q")) {
                     quit = true;
                 }
-                else if (user[0].equals("u")) {
-                    System.out.println("Несортированный список:");
+                else if (user[0].equals("p")) { // print data
                     for (Integer idx : id) {
-                        System.out.printf( "%d ",id.get(idx));
+                       // System.out.printf("%d ",id.get(idx));
                         System.out.printf("%s ", lname.get(idx));
                         System.out.printf("%s ", fname.get(idx));
                         System.out.printf("%s ", mname.get(idx));
                         System.out.printf("%d ", age.get(idx));
-                     //   String gender = (sex.get(idx).equals(true))?"Мужчина":"Женщина";
-                        String gender = (sex.get(idx).equals(1))?"Мужчина":"Женщина";
+                        String gender = (sex.get(idx).equals(true))?"Мужчина":"Женщина";
                         System.out.printf("%s%n", gender);
                     }
                     System.out.println("Найдено " + id.size() + " зап.");
                 }
-                else if (user[0].equals("s")) {
-                    System.out.println("Cортированный список:");
-//                    LinkedList<Integer> sorted = new LinkedList<>(bubble(age));
-//                    System.out.println(sorted);
+                else if (user[0].equals("s")) { // sort data
                     int count = 0;
                     for (Integer s: bubble(age))
                     {
-                        if(sex.get(age.indexOf(s)).equals(0)) {
+                        if(sex.get(age.indexOf(s)).equals(false)) {
                             id.set(count, age.indexOf(s));
                             count++;
                         }
                     }
                     for (Integer s: bubble(age))
                     {
-                        if(sex.get(age.indexOf(s)).equals(1)) {
+                        if(sex.get(age.indexOf(s)).equals(true)) {
                             id.set(count, age.indexOf(s));
                             count++;
                         }
                     }
+                    System.out.println("Данные отсортированны, нажмите p");
                 }
                 else {
                     System.out.println("Ввод не соответствует образцу!");
