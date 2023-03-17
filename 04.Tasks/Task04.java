@@ -7,12 +7,12 @@ public class Task04 {
         LinkedList<String> mname = new LinkedList<>();
         LinkedList<Integer> age = new LinkedList<>();
         LinkedList<Boolean> sex = new LinkedList<>();
-        System.out.println("Образец  заполнения: Фамилия Имя Отчество 38 муж");
+        System.out.println("Образец заполнения через пробел: Фамилия Имя Отчество 38 муж");
         Scanner input = new Scanner(System.in);
         boolean quit = false;
         do
         { 
-                System.out.printf("Закончить - 2 enter: ");
+                System.out.printf("q(uit),  u(nsorted),   s(orted): ");
                 String[] user = input.nextLine().split(" ");
                 if (user.length == 5) {
                 id.add(id.size());
@@ -26,19 +26,28 @@ public class Task04 {
                 sex.add(gen);
 
                 }
-                else if (user.length != 5) {
+                else if (user[0].equals("q")) {
                     quit = true;
-                } else {
-                    // Выводим на печать сообщение об ошибке
-                    System.out.println("Неверный формат ввода");
+                }
+                else if (user[0].equals("u")) {
+                    System.out.println("Несортированный список:");
+                    for (Integer idx : id) {
+                        System.out.printf( "%d ",id.get(idx));
+                        System.out.printf("%s ", lname.get(idx));
+                        System.out.printf("%s ", fname.get(idx));
+                        System.out.printf("%s ", mname.get(idx));
+                        System.out.printf("%d ", age.get(idx));
+                        String gender = (sex.get(idx))?"Мужчина":"Женщина";
+                        System.out.printf("%s ", gender);  
+                        System.out.println("Найдено " + id.size() + " зап.");     
+                    }
+                }
+                else {
+                    System.out.println("Ввод не соответствует образцу!");
                 }
             
         }
         while(!quit);
-
-        for (Integer idx : id) {
-            System.out.println(id.indexOf(idx) + lname.indexOf(idx) + fname.indexOf(idx) + mname.indexOf(idx) + age.indexOf(idx) + sex.indexOf(idx));       
-        }
     }
        
 }
