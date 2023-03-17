@@ -1,4 +1,3 @@
-import java.sql.SQLOutput;
 import java.util.*;
 public class Task04 {
     public static void main(String[] args) {
@@ -13,7 +12,7 @@ public class Task04 {
         boolean quit = false;
         do
         {
-                System.out.printf(" q(uit), p(rint), s(ort) or add: ");
+                System.out.printf(" q(uit), p(rint), s(ort) or add: "); // menu
                 String[] user = input.nextLine().split(" ");
                 if (user.length == 5) {
                 id.add(id.size());
@@ -25,7 +24,6 @@ public class Task04 {
                 || user[4].equals("Муж") || user[4].equals("M") || user[4].equals("M")
                 || user[4].equals("мужчина") || user[4].equals("Мужчина"))? true: false;
                 sex.add(gen);
-
                 }
                 else if (user[0].equals("q")) {
                     quit = true;
@@ -67,8 +65,7 @@ public class Task04 {
         }
         while(!quit);
     }
-
-    static LinkedList<Integer> bubble(LinkedList<Integer> list){
+    static LinkedList<Integer> bubble(LinkedList<Integer> list){ // bubble algo
         LinkedList<Integer> lst = new LinkedList<>();
         lst.addAll(list);
         for (int i = 0; i < lst.size() - 1; i++) {
