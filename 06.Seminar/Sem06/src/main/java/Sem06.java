@@ -1,5 +1,4 @@
 import java.util.*;
-
 public class Sem06 {
     public static void main(String[] args) {
         Myset myset = new Myset();
